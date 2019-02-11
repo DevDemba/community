@@ -7,12 +7,14 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
     </head>
-    <body>
+    <body style="display: flex; justify-content:center; flex-direction:column; align-items:center;">
         <h2>
            Error 401 : l'accès n'est pas autorisé !!
         </h2>
 
         <p> <b>Bien tenté!!</b>
         <p>cette page est interdit pour toi mon ami ;)</p>
+
+        <div> <a href="{{ url('/') }}">Home</a></div>
     </body>
 </html>
