@@ -14,7 +14,19 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    @if(auth()->check())
+                        @if (auth()->user()->type === 'admin')
+                            <span style="display: flex;justify-content: center;">{{ Auth::user()->name }}</span><br>
+                            <p>Ma page d'administration :</p>
+                                <li><a href="{{ route('user.index') }}">Liste des utilisateurs</a></li>
+                                <li><a href="{{ route('conferencies.index') }}">Liste des conférences</a></li>
+                                <li><a href="{{ route('admin') }}">Les status</a></li>
+                                <li><a href="{{ route('conferencies.create') }}">Ajouter une conférence</a></li>
+                        @else
+                            You are logged in!<br />
+                            <li><a href="{{ route('allconferencies') }}">Liste des conférences</a><br /></li>
+                        @endif
+                    @endif
                 </div>
             </div>
         </div>
