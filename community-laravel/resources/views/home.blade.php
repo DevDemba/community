@@ -19,12 +19,12 @@
                             <span style="display: flex;justify-content: center;">{{ Auth::user()->name }}</span><br>
                             <p>Ma page d'administration :</p>
                                 <li><a href="{{ route('user.index') }}">Liste des utilisateurs</a></li>
-                                <li><a href="{{ route('conferencies.index') }}">Liste des conférences</a></li>
-                                <li><a href="{{ route('admin') }}">Les status</a></li>
-                                <li><a href="{{ route('conferencies.create') }}">Ajouter une conférence</a></li>
+                                <li><a href="{{ route('conferencies.index') }}">Liste des conferences</a></li>
+                                <li><a href="{{ route('admin') }}">Les statuts</a></li>
+                                <li><a href="{{ route('conferencies.create') }}">Ajouter une conference</a></li>
                         @else
                             You are logged in!<br />
-                            <li><a href="{{ route('allconferencies') }}">Liste des conférences</a><br /></li>
+                            <li><a href="{{ route('allconferencies') }}">Liste des conferences</a><br /></li>
                         @endif
                     @endif
                 </div>
