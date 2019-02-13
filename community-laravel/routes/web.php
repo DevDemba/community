@@ -19,10 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
-Route::get('/conferencies', function () {
-    return view('layouts.conferencies');
-});
+Route::get('/allconferencies', 'ConferenciesController@all')->name('allconferencies');
 
 Route::get('/forbidden', function () {
     return view('forbidden');
@@ -32,3 +29,14 @@ Route::get('/forbidden', function () {
 Route::get('/admin', 'AdminController@admin')
     ->middleware('is_admin')
     ->name('admin');
+
+Route::resource('conferencies', 'ConferenciesController')
+    ->middleware('is_admin');
+
+
+Route::get('/users', 'UserController@index')
+    ->middleware('is_admin');
+
+
+Route::resource('user', 'UserController')
+    ->middleware('is_admin');
