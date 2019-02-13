@@ -122,8 +122,9 @@ class ConferenciesController extends Controller
     public function all(){
 
         $conferencies = Conferency::latest()->paginate(5);
-        //dd($conferencies);
-        return view('layouts.conferencies', compact('conferencies' ));
+
+        return view('layouts.conferencies',compact('conferencies'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
 }
