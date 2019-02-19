@@ -21,6 +21,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/allconferencies', 'ConferenciesController@all')->name('allconferencies');
 
+Route::post('/allconferencies', 'ConferenciesController@vote')->name('votes');
+
+
+Route::get('/allconferencies/{id}', 'ConferenciesController@show')->name('viewDetails');
+
 Route::get('/forbidden', function () {
     return view('forbidden');
 });
