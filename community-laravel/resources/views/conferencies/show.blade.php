@@ -21,6 +21,63 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-@include('nav')
+<header style="margin-bottom: 100px;">
+    @include('nav')
+</header>
+    <div class="container">
+        @if(session()->get('success'))
+            <div class="alert alert-success">
+                {{ session()->get('success') }}
+            </div><br />
+        @endif
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <h1 style="text-transform: capitalize">{{$conferency->title}}</h1>
+            <img class="responsive-img" src="{{ asset('images/'.$conferency->image) }}"/>
+            <span class="flow-text green-text text-darken-2">{{$conferency->place}}</span>
+            <p class="flow-text">{{$conferency->description}}<p/>
+            <span class="flow-text blue-text text-darken-2">{{$conferency->date}}</span><br>
+            <div class="row">
+                <form action="{{route('votes')}}" method="post">
+                    @csrf
+                    <div class="col s1">
+                        <input name="vote" type="radio" value="1" id="1" />
+                        <button type="submit"><i class="large material-icons">star</i></button>
+                    </div>
+                </form>
+
+               <form action="{{route('votes')}}" method="post">
+                   @method('PATCH')
+                    @csrf
+                    <div class="col s1">
+                        <input name="vote" type="radio" value="2" id="2" />
+                        <button type="submit" ><i class="large material-icons">star</i></button>
+                    </div>
+                </form>
+
+               <form action="{{route('votes')}}" method="post">
+                    @csrf
+                    <div class="col s1">
+                        <input name="vote" type="radio" value="3" id="3" />
+                        <button type="submit"><i class="large material-icons">star</i></button>
+                    </div>
+                </form>
+
+               <form action="{{route('votes')}}" method="post">
+                    @csrf
+                    <div class="col s1">
+                        <input name="vote" type="radio" value="4" id="4" />
+                        <button type="submit"><i class="large material-icons">star</i></button>
+                    </div>
+                </form>
+
+               <form action="{{route('votes')}}" method="post">
+                    @csrf
+                    <div class="col s1">
+                        <input name="vote" type="radio" value="5" id="5" >
+                        <button type="submit"><i class="large material-icons">star</i>
+                        </button></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

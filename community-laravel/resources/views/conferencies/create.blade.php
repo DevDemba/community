@@ -20,15 +20,15 @@
                     </ul>
                 </div><br />
             @endif
-            <form method="post" action="{{ route('conferencies.store') }}">
+            <form method="post" action="{{ route('conferencies.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="title">title :</label>
                     <input type="text" class="form-control" name="title"/>
                 </div>
                 <div class="form-group">
-                    <label for="image">image :</label>
-                    <input type="file" name="image" class="form-control">
+                    <label for="image">Image :</label>
+                    <input type="file" class="form-control" name="image"/>
                 </div>
                 <div class="form-group">
                     <label for="description">description :</label>

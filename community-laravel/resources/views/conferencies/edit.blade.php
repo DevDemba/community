@@ -8,7 +8,7 @@
     </style>
     <div class="card uper">
         <div class="card-header">
-            Edit Share
+            Edit Conferency
         </div>
         <div class="card-body">
             @if ($errors->any())
@@ -24,20 +24,24 @@
                 @method('PATCH')
                 @csrf
                 <div class="form-group">
-                    <label for="name">Title :</label>
-                    <input type="text" class="form-control" name="title" value={{ $conferency->title }} />
+                    <label for="autocomplete-input">Title :</label>
+                    <input type="text" id="autocomplete-input" class="form-control" name="title" value={{ $conferency->title }} />
                 </div>
                 <div class="form-group">
-                    <label for="image">Image :</label>
-                    <input type="file" class="form-control" name="image" value={{ $conferency->image }} />
+                    <label for="autocomplete-input">Image :</label>
+                    <input type="file" id="autocomplete-input" class="form-control" name="image" value={{ $conferency->image }} />
                 </div>
                 <div class="form-group">
-                    <label for="place">Lieu :</label>
-                    <input type="text" class="form-control" name="place" value={{ $conferency->place }} />
+                    <label for="autocomplete-input">Lieu :</label>
+                    <input type="text" id="autocomplete-input" class="form-control" name="place" value={{ $conferency->place }} />
                 </div>
                 <div class="form-group">
-                    <label for="description">Description :</label>
-                    <input type="text" class="form-control" name="description" value={{ $conferency->description }} />
+                    <label for="autocomplete-input">Description :</label>
+                    <input type="text" id="autocomplete-input" class="form-control" name="description" value={{ $conferency->description }} />
+                </div>
+                <div class="form-group">
+                    <label for="autocomplete-input">Date :</label>
+                    <input type="date" id="autocomplete-input" class="form-control" name="date" value={{ $conferency->date }} />
                 </div>
                 <button type="submit" class="btn btn-primary">Update</button>
             </form>
