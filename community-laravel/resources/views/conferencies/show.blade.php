@@ -12,7 +12,8 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    {{--<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">--}}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -74,8 +75,9 @@
                     @csrf
                     <div class="col s1">
                         <input name="vote" type="radio" value="5" id="5" >
-                        <button type="submit"><i class="large material-icons">star</i>
-                        </button></div>
+                        <button type="submit"><i class="large material-icons">star</i></button>
+                    </div>
+               </form>
             </div>
         </div>
     </div>
