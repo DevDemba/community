@@ -48,10 +48,10 @@ class ConferenciesController extends Controller
             'date' => 'required',
         ]);
 
-        $imageName = time().'.'.request()->image->getClientOriginalExtension();
+        $imageName = time().'.'.request()->image->guessExtension();
 
-        request()->image->move(public_path('images'), $imageName)
-            ->with('success','You have successfully upload image.');
+        request()->image->move(public_path('images'), $imageName);
+            // ->with('success','You have successfully upload image.');
 
 
         Conferency::create($request->all());
