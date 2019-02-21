@@ -29,14 +29,14 @@
                 <tr>
                     <td>{{$conferency->id}}</td>
                     <td>{{$conferency->title}}</td>
-                    <td><img style="width:50px; height: 50px;" src="{{ url('images/'.$conferency->image) }}"/></td>
+                    <td><img style="width:50px; height:50px;" src="{{ url('images/'.$conferency->image) }}"/></td>
                     <td>{{$conferency->place}}</td>
                     <td>{{$conferency->description}}</td>
                     <td>{{$conferency->date}}</td>
                     <td><a href="{{ route('conferencies.show',$conferency->id)}}" class="btn btn-primary">View</a></td>
                     <td><a href="{{ route('conferencies.edit',$conferency->id)}}" class="btn btn-primary">Edit</a></td>
                     <td>
-                        <form action="{{ route('conferencies.destroy', $conferency->id)}}" method="post">
+                        <form action="{{ route('conferencies.destroy',$conferency->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger" type="submit">Delete</button>
