@@ -54,6 +54,7 @@
             @endforeach
             </tbody>
         </table>
+            <div><a href="{{ route('conferencies.create') }}">Ajouter une conference</a></div>
             <div class="d-flex justify-content-center mt-5"> {{ $conferencies->links() }} </div>
     </div>
     </div>
