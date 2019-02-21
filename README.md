@@ -2,13 +2,13 @@
 
 ## Installer les dependances
 
-Dans le dossier "community-laravel" :
+Dans le dossier /community-laravel :
 
-ouvrir un terminal et lancer :
+* ouvrir un terminal et lancer :
 
         composer install
 
-## Configuer la base de données
+## Configurer la base de données
 
 copier le ficher .env.example et le renommer en .env
 
